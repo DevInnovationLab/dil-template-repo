@@ -103,11 +103,15 @@ Computational requirements
 - R 3.4.3
   - the file "`0_setup.R`" will install all dependencies (latest version), and should be run once prior to running other programs.
 
+### Controlled randomness
+
+> INSTRUCTIONS: Some estimation code uses random numbers, almost always provided by pseudorandom number generators (PRNGs). For reproducibility purposes, these should be provided with a deterministic seed, so that the sequence of numbers provided is the same for the original author and any replicators. While this is not always possible, it is a requirement by many journals’ policies. The seed should be set once, and not use a time-stamp. If using parallel processing, special care needs to be taken. If using multiple programs in sequence, care must be taken on how to call these programs, ideally from a main program, so that the sequence is not altered.
+
+Random seed is set at line ___ of program ____
+
 ### Memory and Runtime Requirements
 
 > INSTRUCTIONS: Memory and compute-time requirements may also be relevant or even critical. Some example text follows. It may be useful to break this out by Table/Figure/section of processing. For instance, some estimation routines might run for weeks, but data prep and creating figures might only take a few minutes.
-
-#### Summary
 
 Approximate time needed to reproduce the analyses on a standard (CURRENT YEAR) desktop machine: **______**
 
