@@ -35,8 +35,25 @@ mklink /J /your/git/repo/clone/data/ /data/folder/on/your/box/folder/
 
 ## Workflow
 
-> INSTRUCTIONS: describe project workflow here
+> INSTRUCTIONS: describe the project's implementation of [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) here. Below is an example
 
+The `main` branch in this repository is protected. All changes to the main branch should come from *pull requests* (PR) from the `develop` branch. **The `develop` branch should be merged to master after (1) completing the data processing for a new data source; (2) developing a new piece of analysis; completing a round of code review.** Once one of these tasks is complete:
+ - [ ] Using the `develop` branch, run the entire project code from the main script.
+ - [ ] Still on the `develop` branch, update the README file.
+ - [ ] Push your changes.
+ - [ ] Open a *pull request* (PR) to the develop branch. Link to all the *issues* addressed in this PR on the PR message.
+ - [ ] Assign a reviewer and let the reviewer know on Slack that they have been assigned a new PR. *List here the handles of team members that can review pull requests to `main`.*
+
+
+**Day-to-day code should be developed on feature branches and merges to `develop` around twice a month.** Break large tasks into smaller tasks, taking one to two weeks of work, and work on them one at a time, with a different feature breanch for each. Once the task in a feature branch is complete:
+ - [ ] Using the feature branch, run the entire project code from the main script. If there are computationally intensive steps that were not edited, you may skip them. Do this at least twice, committing changes between runs to ensure the code is stable.
+ - [ ] Still on the feature branch, update the README file.
+ - [ ] Push your changes.
+ - [ ] Open a *pull request* (PR) to the develop branch. Link to all the *issues* addressed in this PR on the PR message.
+ - [ ] Assign a reviewer and let the reviewer know on Slack that they have been assigned a new PR. *List here who are the team members that can review pull requests to develop -- it can be anyone in the team who is knowledgeable of the coding language used.*
+
+
+ 
 ## Folder structure
 
 > INSTRUCTIONS: Describe folder structure here or link to the template adopted
