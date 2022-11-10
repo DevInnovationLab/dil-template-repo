@@ -37,23 +37,51 @@ mklink /J /your/git/repo/clone/data/ /data/folder/on/your/box/folder/
 
 > INSTRUCTIONS: describe the project's implementation of [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) here. Below is an example
 
-The `main` branch in this repository is protected. All changes to the main branch should come from *pull requests* (PR) from the `develop` branch. **The `develop` branch should be merged to master after (1) completing the data processing for a new data source; (2) developing a new piece of analysis; completing a round of code review.** Once one of these tasks is complete:
- - [ ] Using the `develop` branch, run the entire project code from the main script.
- - [ ] Still on the `develop` branch, update the README file.
- - [ ] Push your changes.
- - [ ] Open a *pull request* (PR) to the develop branch. Link to all the *issues* addressed in this PR on the PR message.
- - [ ] Assign a reviewer and let the reviewer know on Slack that they have been assigned a new PR. *List here the handles of team members that can review pull requests to `main`.*
+### What branch should I work on?
 
+**Code should be developed on feature branches and merged to `develop` around twice a month.** Break large tasks into smaller tasks, taking one to two weeks of work, and work on them one at a time, with a different feature breanch for each. Once the task in a feature branch is complete, open a pull request to `develop`.
 
-**Day-to-day code should be developed on feature branches and merges to `develop` around twice a month.** Break large tasks into smaller tasks, taking one to two weeks of work, and work on them one at a time, with a different feature breanch for each. Once the task in a feature branch is complete:
- - [ ] Using the feature branch, run the entire project code from the main script. If there are computationally intensive steps that were not edited, you may skip them. Do this at least twice, committing changes between runs to ensure the code is stable.
- - [ ] Still on the feature branch, update the README file.
- - [ ] Push your changes.
- - [ ] Open a *pull request* (PR) to the develop branch. Link to all the *issues* addressed in this PR on the PR message.
- - [ ] Assign a reviewer and let the reviewer know on Slack that they have been assigned a new PR. *List here who are the team members that can review pull requests to develop -- it can be anyone in the team who is knowledgeable of the coding language used.*
+The `main` branch in this repository is protected. All changes to the main branch should come from *pull requests* (PR) from the `develop` branch. **The `develop` branch should be merged to master after (1) completing the data processing for a new data source; (2) developing a new piece of analysis; completing a round of code review.** 
 
+### Opening a pull request from a feature branch to `develop`
 
- 
+- [ ] On the feature branch, run the entire project code from the main script. Make sure that the code is running and check whether any results are changing. 
+ - *If there are any computationally intensive steps that were not edited*, you may skip them
+ - *If there are any random process in your code*, run the code at least twice to make sure results are stable.
+- [ ] Still on the feature branch, update the README file to include any new files or folders created.
+- [ ] Commit and push your changes.
+- [ ] Open a *pull request* (PR) from the feature branch to `develop`. Link to all the *issues* addressed in this PR on the PR message
+- [ ] Assign a reviewer and let the reviewer know on Slack that they have been assigned a new PR. 
+ - Team members who can review pull requests to `develop`: *List handles here*
+
+### Opening a pull request from `develop` to `main`
+
+- [ ] On the `develop` branch, run the entire project code from the main script. Make sure that the code is running and check whether any results are changing. 
+	- [ ] Check that the code is running, that is, there was no error message and all scripts were executed.
+	- [ ] Check that all outputs were recreated (looking at the date they were last modified).
+    - [ ] Check whether there are changes in the outputs. If there are, make sure you understand where they are coming from and explain the reason in the commit message.
+	- [ ] *If there are any random process in your code*, do this at least twice, committing changes between runs, to ensure the outputs are stable.
+- [ ] Still on `develop`, make sure the README is up to date and includes all files and folders in the project.
+- [ ] Commit and push your changes.
+- [ ] Open a *pull request* (PR) from `develop` to `main`. Link to all the *issues* addressed in this PR on the PR message by copying them from feature branch PRs.
+- [ ] Assign a reviewer and let the reviewer know on Slack that they have been assigned a new PR. 
+ - Team members who can review pull requests to `main`: *List handles here*
+
+### Reviewing a pull request
+
+If you were assigned to review a pull request, do the following:
+- [ ] Pull the changes to your local copy of the repository.
+- [ ] Checkout the pull request as a branch.
+- [ ] Run the whole code for the paper, from importing the raw data to recreating any intermediate and final datasets, to exporting any results.
+	- [ ] Check that the code is running, that is, there was no error message and all scripts were executed.
+    - [ ] Check whether there are changes in the outputs. If there are, make sure you understand where they are coming from and explain the reason in the commit message.
+- [ ] Open the pull request on the browser and navigate to "Files changed", and [review the changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews).
+- [ ] Once you are done, scroll to the top of the pr page and click on the "Review" button and approve the pull request or request additional changes.
+  - [ ] If you requested additional changes, inform the team members who need to make them on Slack.
+- [ ] Once the pull request is approved, merge it.
+  - [ ] *If you just merged a pull request from a feature branch to `develop`*, delete the feature branch.
+  - [ ] *If you just merged a pull request `develop` to `main`*, [create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) from the `main` branch so you can easily navigate back to this stage of the project.
+
 ## Folder structure
 
 > INSTRUCTIONS: Describe folder structure here or link to the template adopted
