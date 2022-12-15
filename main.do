@@ -14,7 +14,7 @@ FOR THIS TEMPLATE TO WORK CORRECTLY, EDIT THE FILE PATHS IN SECTION 2 TO MATCH Y
 	local clean			0
 	local tidy			0
 	local construct		0
-	local analysis		0
+	local analyze		0
 	
 /*------------------------------------------------------------------------------
 	2 Set file paths
@@ -64,7 +64,7 @@ FOR THIS TEMPLATE TO WORK CORRECTLY, EDIT THE FILE PATHS IN SECTION 2 TO MATCH Y
 			Requires: "${data_box}/encrypted/survey.csv"
 			Creates:  "${data_box}/encrypted/survey.dta"
 		----------------------------------------------------------------------*/
-		do "${code}/import/import.do"
+		do "${code}/import/import-survey.do"
 		
 	}
 	if `deidentify' {
@@ -72,21 +72,10 @@ FOR THIS TEMPLATE TO WORK CORRECTLY, EDIT THE FILE PATHS IN SECTION 2 TO MATCH Y
 		/*----------------------------------------------------------------------
 			Remove identifying information from survey data
 			
-			Requires: "${data_box}/encrypted/data.csv"
+			Requires: "${data_box}/encrypted/survey.dta"
 			Creates:  "${data_box}/deidentified/survey-deindentified.dta"
 		----------------------------------------------------------------------*/
-		do "${code}/deidentify/deidentify.do"
-		
-	}
-	if `clean' {
-		
-		/*----------------------------------------------------------------------
-			Clean survey data
-			
-			Requires: "${data_box}/deidentified/data-deindentified.dta"
-			Creates:  "${data_box}/clean/survey-clean.dta"
-		----------------------------------------------------------------------*/
-		do "${code}/clean/clean.do"
+		do "${code}/deidentify/deidentify-survey.do"
 		
 	}
 	if `tidy' {
@@ -94,18 +83,37 @@ FOR THIS TEMPLATE TO WORK CORRECTLY, EDIT THE FILE PATHS IN SECTION 2 TO MATCH Y
 		/*----------------------------------------------------------------------
 			Tidy household-level survey data
 			
-			Requires: "${data_box}/clean/survey-clean.dta"
+			Requires: "${data_box}/deidentified/survey-deindentified.dta"
 			Creates:  "${data_box}/tidy/survey-household-tidy.dta"
 		----------------------------------------------------------------------*/
-		do "${code}/tidy/tidy-household.do"
+		do "${code}/tidy/tidy-household-survey.do"
 		
 		/*----------------------------------------------------------------------
 			Tidy child-level survey data
 			
-			Requires: "${data_box}/clean/survey-clean.dta"
+			Requires: "${data_box}/deidentified/survey-deindentified.dta"
 			Creates:  "${data_box}/tidy/survey-child-tidy.dta"
 		----------------------------------------------------------------------*/
-		do "${code}/tidy/tidy-child.do"
+		do "${code}/clean/clean-child-survey.do"
+		
+	}
+	if `clean' {
+		
+		/*----------------------------------------------------------------------
+			Clean child-level data
+			
+			Requires: "${data_box}/tidy/survey-household-tidy.dta"
+			Creates:  "${data_box}/clean/survey-household-clean.dta"
+		----------------------------------------------------------------------*/
+		do "${code}/clean/clean-household-survey.do"
+		
+		/*----------------------------------------------------------------------
+			Clean household-level data
+			
+			Requires: "${data_box}/tidy/survey-child-tidy.dta"
+			Creates:  "${data_box}/clean/survey-child-clean.dta"
+		----------------------------------------------------------------------*/
+		do "${code}/clean/clean-child.do"
 		
 	}
 	if `construct' {
@@ -113,7 +121,7 @@ FOR THIS TEMPLATE TO WORK CORRECTLY, EDIT THE FILE PATHS IN SECTION 2 TO MATCH Y
 		/*----------------------------------------------------------------------
 			Construct education outcomes
 			
-			Requires: "${data_box}/tidy/survey-child-tidy.dta"
+			Requires: "${data_box}/clean/survey-child-clean.dta"
 			Creates:  "${data_box}/constructed/child-education-constructed.dta"
 		----------------------------------------------------------------------*/
 		do "${code}/construct/construct-education.do"
@@ -135,7 +143,7 @@ FOR THIS TEMPLATE TO WORK CORRECTLY, EDIT THE FILE PATHS IN SECTION 2 TO MATCH Y
 		----------------------------------------------------------------------*/
 		do "${code}/construct/combine-child-data.do"
 	}
-	if `analysis' {
+	if `analyze' {
 		
 		/*----------------------------------------------------------------------
 			Balance table

@@ -50,6 +50,7 @@
 !/**/*.Rmd
 !/**/*.Rproj
 !/**/renv/settings.dcf
+!renv.lock
 !/**/*.sh
 
 # LaTeX
@@ -106,3 +107,4 @@ password.*
 passwords.*
 password/
 passwords/
+.Rproj.user
