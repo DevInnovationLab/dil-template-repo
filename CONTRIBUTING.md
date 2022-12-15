@@ -33,7 +33,12 @@
 - [ ] Clone this repository: click on the green *Code* button, then *Open with GitHub Desktop* 
 - [ ] Using the GitHub client, [check out the `develop` branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/managing-branches#switching-between-branches)
 - [ ] Navigate to the local copy of the repository 
-- [ ] Add your computer's username and file paths to the [main script](link to master script lines to be edited) and commit your changes
+- [ ] *If the project uses Stata*, add your computer's username and file paths to `main.do` and commit your changes
+- [ ] *If the project uses R*, create a new file called .Rprofile in the repository's root folder. This file should contain two lines of code, one activating your R environment and one defining the path to your Box folder. You can use the code below to create it by adjusting the second line to match your computer's installation of the Box client. Note that this file should be called just `.Rprofile`, without any additional file format indicated in its name (such as `.Rprofile.txt`).
+```
+source("renv/activate.R")
+Sys.setenv(BOX = "C:/Users/YourUsername/Box")
+```
 - [ ] Change the options in the main script in order to re-run the whole code for the paper, from importing the raw data to recreating any intermediate and final datasets, to exporting any results
 - [ ] Delete any code outputs in the GitHub repository, including meta data for all derived data sets, all tables, and all figures exported by the code
 - [ ] Run the main script
