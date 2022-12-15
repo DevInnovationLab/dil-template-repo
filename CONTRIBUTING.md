@@ -1,30 +1,41 @@
 # CONTRIBUTING
 
-- [Setting up the project on a new computer](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#setting-up-the-project-on-a-new-computer)
-- [Workflow](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#workflow)
 - [Folder structure](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#folder-structure)
 - [Naming conventions](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#naming-conventions)
+- [Setting up the project on a new computer](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#setting-up-the-project-on-a-new-computer)
+- [Workflow](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#workflow)
+
+## Folder structure
+
+> INSTRUCTIONS: This template includes a suggested folder structure for your project. The readme files in each folder indicate how they should be used. If the suggested folder structure does not fit your use case, however, there is no problem in adapting it. The best folder structure is the one that works for your team. Just make sure to include a description of how your repository is organized in this section.
+
+## Naming conventions
+
+> INSTRUCTIONS: Describe naming conventions for each type of name
+
+### Folders
+
+### Files
+
+- Code
+- Data
+- Documentation
+
+### Variables
+
+### Functions
 
 ## Setting up the project on a new computer
 
 > INSTRUCTIONS: add link to project box folder on the next line
 - [ ] If you don't have the Box client installed, install it and sync the [project's Box folder](link to project box folder)
-- [ ] If you don't have a local git client installed, install one (e.g. [GitHub Desktop](https://desktop.github.com/))
+- [ ] If you don't have a local git client installed, install one ([GitHub Desktop](https://desktop.github.com/) is a good option for beginners)
 - [ ] Clone this repository: click on the green *Code* button, then *Open with GitHub Desktop* 
-- [ ] Using the GitHub client, check out the `develop` branch
+- [ ] Using the GitHub client, [check out the `develop` branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/managing-branches#switching-between-branches)
 - [ ] Navigate to the local copy of the repository 
-> INSTRUCTIONS: edit the lines below to reflect the preferred [file path](https://dimewiki.worldbank.org/File_path) handling solution for the project by keeping only one of the next two items
 - [ ] Add your computer's username and file paths to the [main script](link to master script lines to be edited) and commit your changes
-- [ ] Create a directory junction or symlink to the Box data folder on the root directory for the repo:
-```
-# Mac
-ln -s /your/git/repo/clone/data/ /data/folder/on/your/box/folder/
-
-# PC
-mklink /J /your/git/repo/clone/data/ /data/folder/on/your/box/folder/
-```
 - [ ] Change the options in the main script in order to re-run the whole code for the paper, from importing the raw data to recreating any intermediate and final datasets, to exporting any results
-- [ ] Delete any code outputs, including all derived data sets, all tables and all figures exported by the code
+- [ ] Delete any code outputs in the GitHub repository, including meta data for all derived data sets, all tables, and all figures exported by the code
 - [ ] Run the main script
 - [ ] Check that:
   - [ ] The code ran, that is, there was no error message
@@ -81,23 +92,3 @@ If you were assigned to review a pull request, do the following:
 - [ ] Once the pull request is approved, merge it.
   - [ ] *If you just merged a pull request from a feature branch to `develop`*, delete the feature branch.
   - [ ] *If you just merged a pull request `develop` to `main`*, [create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) from the `main` branch so you can easily navigate back to this stage of the project.
-
-## Folder structure
-
-> INSTRUCTIONS: Describe folder structure here or link to the template adopted
-
-## Naming conventions
-
-> INSTRUCTIONS: Describe naming conventions for each type of name
-
-### Folders
-
-### Files
-
-- Code
-- Data
-- Documentation
-
-### Variables
-
-### Functions
