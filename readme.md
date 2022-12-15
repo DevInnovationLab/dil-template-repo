@@ -1,25 +1,21 @@
 # Template README and Guidance
 
-> INSTRUCTIONS: Include a brief project summary here. 
-
-**Contents**
-- [Instructions to replicators](#instructions-to-replicators)
-- [Computational requirements](#computational-requirements)
-- [Description of programs/code](#description-of-programscode)
-- [List of final outputs](#list-of-final-outputs)
-- [List of datasets](#list-of-datasets)
-- [Acknowledgements](#acknowledgements)
-
-## Instructions to replicators
-
-> INSTRUCTIONS: The first two sections ensure that the data and software necessary to conduct the replication have been collected. This section then describes a human-readable instruction to conduct the replication. This may be simple, or may involve many complicated steps. It should be a simple list, no excess prose. Strict linear sequence. If more than 4-5 manual steps, please wrap a master program/Makefile around them, in logical sequences. Examples follow.
+> INSTRUCTIONS: Include a brief project summary here, as well as short instructions for how to run the code in the repository. This may be simple, or may involve many complicated steps. It should be a simple list, no excess prose. Strict linear sequence. If more than 4-5 manual steps, please wrap a master program/Makefile around them, in logical sequences. Examples follow.
 
 - Edit `programs/config.do` to adjust the default path
 - Run `programs/00_setup.do` once on a new system to set up the working environment. 
 - Download the data files referenced above. Each should be stored in the prepared subdirectories of `data/`, in the format that you download them in. Do not unzip. Scripts are provided in each directory to download the public-use files. Confidential data files requested as part of your FSRDC project will appear in the `/data` folder. No further action is needed on the replicator's part.
 - Run `programs/01_master.do` to run all steps in sequence.
 
-### Details
+**Contents**
+- [Comments for replicators](#comments-for-replicators)
+- [Computational requirements](#computational-requirements)
+- [Description of programs/code](#description-of-programscode)
+- [List of final outputs](#list-of-final-outputs)
+- [List of datasets](#list-of-datasets)
+- [Acknowledgements](#acknowledgements)
+
+## Comments for replicators
 
 - `programs/00_setup.do`: will create all output directories, install needed ado packages. 
    - If wishing to update the ado packages used by this archive, change the parameter `update_ado` to `yes`. However, this is not needed to successfully reproduce the manuscript tables. 
