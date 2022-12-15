@@ -3,11 +3,10 @@
 						  Development Innovation Lab
 						    Template main do-file
 						  
-	FOR THIS TEMPLATE TO WORK CORRECTLY, LAUNCH STATA BY OPENING THE STATA 
-	PROJECT IN THE ROOT FOLDER FOR THE GITHUB REPOSITORY
+FOR THIS TEMPLATE TO WORK CORRECTLY, EDIT THE FILE PATHS IN SECTION 2 TO MATCH YOUR COMPUTER
 						  
 --------------------------------------------------------------------------------
-	Select parts of the code to run
+	1 Select parts of the code to run
 ------------------------------------------------------------------------------*/
 	
 	local import		0
@@ -18,7 +17,7 @@
 	local analysis		0
 	
 /*------------------------------------------------------------------------------
-	Set file paths
+	2 Set file paths
 ------------------------------------------------------------------------------*/
 
 	* Enter the file path to the project folder in Box for every new machine you use
@@ -40,7 +39,7 @@
 	global	output		"${github}/output"
 	
 /*------------------------------------------------------------------------------
-	Initial settings
+	3 Initial settings
 ------------------------------------------------------------------------------*/
 
 	* Find user-written commands in GitHub
@@ -54,7 +53,7 @@
 	`r(version)'
 	
 /*------------------------------------------------------------------------------
-	Run code
+	4 Run code
 ------------------------------------------------------------------------------*/
 
 	if `import' {
