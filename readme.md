@@ -1,3 +1,9 @@
+# How to use this template
+
+1. If you want to start a new repository, click on `Use this template` and then `Create a new repository`
+1. Copy the relevant [issues](https://github.com/DevInnovationLab/dil-template-repo/issues) from the template repository to your new repository
+1. Follow the instructions in the issues
+
 # Template README and Guidance
 
 > INSTRUCTIONS: Include a brief project summary here, as well as short instructions for how to run the code in the repository. This may be simple, or may involve many complicated steps. It should be a simple list, no excess prose. Strict linear sequence. If more than 4-5 manual steps, please wrap a master program/Makefile around them, in logical sequences. Examples follow.
