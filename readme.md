@@ -1,8 +1,9 @@
 # How to use this template
 
-1. If you want to start a new repository, click on `Use this template` and then `Create a new repository`
-1. Copy the relevant [issues](https://github.com/DevInnovationLab/dil-template-repo/issues) from the template repository to your new repository
-1. Follow the instructions in the issues
+1. If you want to start a new repository, click on `Use this template` and then `Create a new repository`. If the repository was created for you, skip this step.
+1. Copy the relevant [issues](https://github.com/DevInnovationLab/dil-template-repo/issues) from the template repository to your new repository.
+1. Delete this section of the README.
+1. Follow the instructions in the issues.
 
 # Template README and Guidance
 
