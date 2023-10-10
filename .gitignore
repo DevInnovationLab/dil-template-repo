@@ -53,6 +53,9 @@
 !renv.lock
 !/**/*.sh
 
+# Stan
+!/**/*/stan
+
 # LaTeX
 !/**/*.tex
 !/**/*.bib
