@@ -54,6 +54,9 @@
 !/**/*.sh
 !.Rprofile
 
+# Stan
+!/**/*/stan
+
 # LaTeX
 !/**/*.tex
 !/**/*.bib

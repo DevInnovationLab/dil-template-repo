@@ -3,7 +3,7 @@
 - [Folder structure](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#folder-structure)
 - [Naming conventions](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#naming-conventions)
 - [Setting up the project on a new computer](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#setting-up-the-project-on-a-new-computer)
-- [Workflow](https://github.com/DevInnovationLab/dil-template-repo/edit/contributing/CONTRIBUTING.md#workflow)
+- [Workflow](https://github.com/DevInnovationLab/dil-template-repo/blob/main/CONTRIBUTING.md#workflow)
 
 ## Folder structure
 
