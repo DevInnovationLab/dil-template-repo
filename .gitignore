@@ -52,6 +52,7 @@
 !/**/renv/settings.dcf
 !renv.lock
 !/**/*.sh
+!.Rprofile
 
 # LaTeX
 !/**/*.tex
